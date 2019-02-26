@@ -1,6 +1,6 @@
 # eslint-plugin-import-srclimits
 
-Disallow using the method methods
+Limit import source from some special folder in configuration
 
 [![version](https://img.shields.io/npm/v/eslint-plugin-import-srclimits.svg "version")](https://www.npmjs.com/package/eslint-plugin-import-srclimits)&nbsp;
 [![Build Status](https://img.shields.io/travis/Froguard/eslint-plugin-import-srclimits.svg)](https://travis-ci.org/Froguard/eslint-plugin-import-srclimits)&nbsp;
