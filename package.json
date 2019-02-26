@@ -8,7 +8,7 @@
     "eslint-plugin",
     "import",
     "folder",
-    "limit"
+    "limits"
   ],
   "author": "froguard",
   "main": "index.js",
