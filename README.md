@@ -59,4 +59,9 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+### Others
+
+- [eslint-plugin-no-methods](https://www.npmjs.com/package/eslint-plugin-no-methods)
+- [eslint-plugin-no-inculdes](https://www.npmjs.com/package/eslint-plugin-no-includes)
+
 > Created by yeoman tool.
