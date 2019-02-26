@@ -33,7 +33,7 @@ Set `parserOptions.sourceType` value as `module` in your configuration.
 ```json
 {
     "plugins": [
-        "import-srclimit"
+        "import-srclimits"
     ],
     "parserOptions": { 
         "ecmaVersion": 2015, 
@@ -47,7 +47,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "import-srclimit/srclimit": [
+    "import-srclimits/srclimits": [
       "error", 
       {
         "files": ["./src/**/*.{js,vue,jsx}"],

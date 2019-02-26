@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-let srclimit = require('./lib/rules/srclimit');
+let srclimits = require('./lib/rules/srclimits');
 
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ let srclimit = require('./lib/rules/srclimit');
 let rules = {};
 
 module.exports.rules = Object.assign(rules, {
-    "srclimit": srclimit
+    "srclimits": srclimits
 });
 
 
