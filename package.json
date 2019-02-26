@@ -1,15 +1,14 @@
 {
   "name": "eslint-plugin-import-srclimits",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Limit import source from some special folder in configuration",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin",
-    "no-methods",
-    "includes",
-    "entries",
-    "isInteger"
+    "import",
+    "folder",
+    "limit"
   ],
   "author": "froguard",
   "main": "index.js",
