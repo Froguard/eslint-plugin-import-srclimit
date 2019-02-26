@@ -1,0 +1,36 @@
+{
+  "name": "eslint-plugin-import-srclimits",
+  "version": "1.0.4",
+  "description": "Limit import source from some special folder in configuration",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "no-methods",
+    "includes",
+    "entries",
+    "isInteger"
+  ],
+  "author": "froguard",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive",
+    "test:simple": "node --harmony ./test.js"
+  },
+  "dependencies": {
+    "anymatch": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "~3.9.1",
+    "mocha": "^5.2.0",
+    "requireindex": "^1.2.0"
+  },
+  "peerDependencies": {
+    "eslint": "~3.9.1"
+  },
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "homepage": "https://github.com/Froguard/eslint-plugin-import-srclimits",
+  "license": "MIT"
+}
