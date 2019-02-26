@@ -21,6 +21,26 @@ const options = [
 module.exports = {
     valid: [
         {
+            code: "import qs from 'qs';", // package
+            options,
+            filename: './src/components/banner.js'
+        },
+        {
+            code: "import abc from 'qs/abc';", // not package, it is just a sub directory
+            options,
+            filename: './src/components/banner.js'
+        },
+        {
+            code: "import kapp from '@kaola/kapp';",
+            options,
+            filename: './src/components/banner.js'
+        },
+        {
+            code: "import abc from '@kaola/kapp/abc';",
+            options,
+            filename: './src/components/banner.js'
+        },
+        {
             code: "import clone from '../utils/clone.js';",
             options,
             filename: './src/components/banner.js'
