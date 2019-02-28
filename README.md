@@ -59,6 +59,40 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+### Test
+
+```
+srclimits
+    valid
+      ✓ import qs from 'qs'; (48ms)
+      ✓ import abc from 'qs/abc';
+      ✓ import kapp from '@scopename/kapp';
+      ✓ import abc from '@scopename/bbb/abc';
+      ✓ import clone from '../utils/clone.js';
+      ✓ import '../utils/clone.js';
+      ✓ import '../utils/clone';
+      ✓ import { clone } from '../utils/index.js';
+      ✓ import { clone } from '../utils/';
+      ✓ import { clone } from '../utils';
+      ✓ import { clone as copy } from '../utils';
+      ✓ import * as _ from '../utils/index.js';
+    invalid
+      ✓ import '../../web/storage.js';
+      ✓ import '../../web/storage';
+      ✓ import storage from '../../web/storage.js';
+      ✓ import storage from '../../web/storage';
+      ✓ import '../../web/utils';
+      ✓ import '../../web/utils/';
+      ✓ import * as _ from '../../web/utils/index.js';
+      ✓ import { addStyleTag } from '../../web/utils/';
+      ✓ import { addStyleTag as injectStyleDom } from '../../web/utils/index';
+      ✓ // multiple lines
+        import { clone } from '../utils/';    // ✓
+        import { base } from '../base/index'; // ✓
+        import { addStyleTag as injectStyleDom } from '../../web/utils/index'; // ✘
+22 passing
+```
+
 ### Others
 
 - [eslint-plugin-no-methods](https://www.npmjs.com/package/eslint-plugin-no-methods)
