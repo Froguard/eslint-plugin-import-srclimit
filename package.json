@@ -14,7 +14,7 @@
   "author": "froguard",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests --recursive",
+    "test": "mocha tests --recursive --harmony",
     "test:simple": "node --harmony ./test.js"
   },
   "dependencies": {
@@ -29,7 +29,7 @@
     "eslint": "~3.9.1"
   },
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=8.0.0"
   },
   "homepage": "https://github.com/Froguard/eslint-plugin-import-srclimits",
   "license": "MIT"
