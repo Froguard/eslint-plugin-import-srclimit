@@ -7,13 +7,13 @@
 //------------------------------------------------------------------------------
 
 // eslint.RuleTester is string-compare ,which via error.message, so you must keep same value between errors and errMsg
-const errMsg = 'The code in the file in the src folder, can\'t import source file in ./web/**';
+const errMsg = 'The code in the file in the src folder, can\'t import source file in ./mock/**';
 const errors = [{ message: errMsg}];
 const options = [
     {
         files: ['./src/**/*.{js,vue,jsx}'],
-        source: ['./src/**/*.*', "node_modules/**", '!./web/**/*'],
-        errMsg: "The code in the file in the src folder, can't import source file in ./web/**"
+        source: ['./src/**/*', "node_modules/**", '!./mock/**/*'],
+        errMsg
     }
 ];
 
@@ -21,22 +21,22 @@ const options = [
 module.exports = {
     valid: [
         {
-            code: "import qs from 'qs';", // package
+            code: "import qs from 'qs';", // packageName
             options,
             filename: './src/components/banner.js'
         },
         {
-            code: "import abc from 'qs/abc';", // not package, it is just a sub directory
+            code: "import abc from 'qs/abc';", // packageName/subDirectory
             options,
             filename: './src/components/banner.js'
         },
         {
-            code: "import kapp from '@kaola/kapp';",
+            code: "import kapp from '@kaola/kapp';", // @scopeName/packageName
             options,
             filename: './src/components/banner.js'
         },
         {
-            code: "import abc from '@kaola/kapp/abc';",
+            code: "import abc from '@kaola/kapp/abc';", // @scopeName/packageName/subDirectory
             options,
             filename: './src/components/banner.js'
         },
@@ -84,55 +84,55 @@ module.exports = {
     ],
     invalid: [
         {
-            code: "import '../../web/storage.js';",
+            code: "import '../../mock/storage.js';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import '../../web/storage';",
+            code: "import '../../mock/storage';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import storage from '../../web/storage.js';",
+            code: "import storage from '../../mock/storage.js';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import storage from '../../web/storage';",
+            code: "import storage from '../../mock/storage';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import '../../web/utils';",
+            code: "import '../../mock/utils';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import '../../web/utils/';",
+            code: "import '../../mock/utils/';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import * as _ from '../../web/utils/index.js';",
+            code: "import * as _ from '../../mock/utils/index.js';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import { addStyleTag } from '../../web/utils/';",
+            code: "import { addStyleTag } from '../../mock/utils/';",
             options,
             errors,
             filename: './src/components/banner.js'
         },
         {
-            code: "import { addStyleTag as injectStyleDom } from '../../web/utils/index';",
+            code: "import { addStyleTag as injectStyleDom } from '../../mock/utils/index';",
             options,
             errors,
             filename: './src/components/banner.js'
@@ -141,7 +141,7 @@ module.exports = {
             code: `// multiple lines
          import { clone } from '../utils/';    // √
          import { base } from '../base/index'; // √
-         import { addStyleTag as injectStyleDom } from '../../web/utils/index'; // ✘
+         import { addStyleTag as injectStyleDom } from '../../mock/utils/index'; // ✘
          `,
             options,
             errors,
