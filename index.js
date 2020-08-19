@@ -20,6 +20,3 @@ let rules = {};
 module.exports.rules = Object.assign(rules, {
     "srclimits": srclimits
 });
-
-
-

@@ -15,7 +15,9 @@ const testCase = [
     ], str: '@xyz/index.js' }, // true
 ];
 
-// testCase.forEach(({matchers, str}) => console.log(anyMatch(matchers, str)));
+testCase.forEach(({matchers, str}) => console.log('tc:', anyMatch(matchers, str)));
+
+// 
 
 console.log('pkg/a/b/c'.match(/^[^./]+\/.+/)); // √
 console.log('pkg/a'.match(/^[^./]+\/.+/)); // √
@@ -26,7 +28,6 @@ console.log(anyMatch(['*'], 'index.js')); // true
 console.log(anyMatch([], 'index.js')); // false
 console.log(anyMatch(['!./mock/*'], 'index.js')); // true
 console.log(anyMatch(['./mock/*'], 'index.js')); // false
-
 
 console.log(anyMatch(['./mock/*'], 'mock/storage.js')); // true
 console.log(anyMatch(['!./mock/*'], 'mock/storage.js')); // false
